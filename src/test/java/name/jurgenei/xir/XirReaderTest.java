@@ -1,6 +1,6 @@
-package name.jurgenei.xir;
+package org.flowdigger.xir;
 
-import name.jurgenei.xir.XirReader;
+import org.flowdigger.xir.XirReader;
 import org.junit.Assert;
 import org.junit.Test;
 import org.xml.sax.DTDHandler;

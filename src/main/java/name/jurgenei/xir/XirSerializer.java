@@ -1,4 +1,4 @@
-package name.jurgenei.xir;
+package org.flowdigger.xir;
 
 import org.xml.sax.Attributes;
 import org.xml.sax.ContentHandler;

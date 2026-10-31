@@ -1,6 +1,6 @@
-package name.jurgenei.xir;
+package org.flowdigger.xir;
 
-import name.jurgenei.xir.XirSerializer;
+import org.flowdigger.xir.XirSerializer;
 import org.junit.Assert;
 import org.junit.Test;
 import org.xml.sax.helpers.AttributesImpl;
