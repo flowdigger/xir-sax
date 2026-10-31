@@ -32,11 +32,11 @@ flowchart TD
     node_event_emission -->|"emits events"| node_sax_consumer
     node_serializer -->|"writes"| node_sexpr_output
 
-    click node_xml_reader "https://github.com/jurgenei/xir-sax/blob/main/src/main/java/name/jurgenei/xir/XirReader.java"
-    click node_parser "https://github.com/jurgenei/xir-sax/blob/main/src/main/java/name/jurgenei/xir/XirParser.java"
-    click node_syntax_model "https://github.com/jurgenei/xir-sax/blob/main/src/main/java/name/jurgenei/xir/XirExpressionParser.java"
-    click node_event_emission "https://github.com/jurgenei/xir-sax/blob/main/src/main/java/name/jurgenei/xir/XirParser.java"
-    click node_serializer "https://github.com/jurgenei/xir-sax/blob/main/src/main/java/name/jurgenei/xir/XirSerializer.java"
+    click node_xml_reader "https://github.com/flowdigger/xir-sax/blob/main/src/main/java/name/flowdigger/xir/XirReader.java"
+    click node_parser "https://github.com/flowdigger/xir-sax/blob/main/src/main/java/name/flowdigger/xir/XirParser.java"
+    click node_syntax_model "https://github.com/flowdigger/xir-sax/blob/main/src/main/java/name/flowdigger/xir/XirExpressionParser.java"
+    click node_event_emission "https://github.com/flowdigger/xir-sax/blob/main/src/main/java/name/flowdigger/xir/XirParser.java"
+    click node_serializer "https://github.com/flowdigger/xir-sax/blob/main/src/main/java/name/flowdigger/xir/XirSerializer.java"
 
     classDef toneNeutral fill:#f8fafc,stroke:#334155,stroke-width:1.5px,color:#0f172a
     classDef toneBlue fill:#dbeafe,stroke:#2563eb,stroke-width:1.5px,color:#172554
