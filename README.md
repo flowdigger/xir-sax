@@ -8,7 +8,7 @@
 [![SpotBugs Security](https://github.com/flowdigger/xir-sax/actions/workflows/spotbugs-security.yml/badge.svg)](https://github.com/flowdigger/xir-sax/actions/workflows/spotbugs-security.yml)
 [![Dependabot](https://img.shields.io/badge/dependabot-enabled-025E8C?logo=dependabot)](https://github.com/flowdigger/xir-sax/security/dependabot)
 [![Coverage](https://codecov.io/gh/flowdigger/xir-sax/graph/badge.svg?branch=main)](https://codecov.io/gh/flowdigger/xir-sax?branch=main)
-[![Maven Central](https://img.shields.io/maven-central/v/name.flowdigger/xir-sax.svg)](https://search.maven.org/artifact/name.flowdigger/xir-sax)
+[![Maven Central](https://img.shields.io/maven-central/v/org.flowdigger/xir-sax.svg)](https://search.maven.org/artifact/org.flowdigger/xir-sax)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Java](https://img.shields.io/badge/java-21+-green.svg)](https://www.oracle.com/java/)
 [![Gradle](https://img.shields.io/badge/gradle-9.5+-blue.svg)](https://gradle.org/)
@@ -30,13 +30,13 @@ Next repository in reading path: [xir-g4](https://github.com/flowdigger/xir-g4).
 ## Coordinates
 
 ```text
-name.flowdigger:xir-sax:<version>
+org.flowdigger:xir-sax:<version>
 ```
 
 ## Namespace
 
-- Java package: `name.flowdigger.xir`
-- Internal XDM bridge namespace URI: `urn:name.flowdigger.xml:xdm`
+- Java package: `org.flowdigger.xir`
+- Internal XDM bridge namespace URI: `urn:org.flowdigger.xml:xdm`
 - Internal XDM bridge prefix: `xdm`
 
 ## Included APIs
