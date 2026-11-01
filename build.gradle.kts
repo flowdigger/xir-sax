@@ -17,8 +17,8 @@ plugins {
     id("com.github.spotbugs") version "6.5.13"
 }
 
-group = "name.jurgenei"
-version = "0.1.4"
+group = "org.flowdigger"
+version = "1.0.0"
 
 repositories {
     mavenCentral()
@@ -159,10 +159,10 @@ tasks.named("check") {
 val stageCentralBundleRepo by tasks.registering(Sync::class) {
     dependsOn(tasks.named("publishMavenJavaPublicationToMavenLocal"))
 
-    val artifactBaseDir = file("${System.getProperty("user.home")}/.m2/repository/name/jurgenei/xir-sax")
+    val artifactBaseDir = file("${System.getProperty("user.home")}/.m2/repository/org/flowdigger/xir-sax")
     val artifactVersionDir = file("$artifactBaseDir/${project.version}")
     from(artifactVersionDir)
-    into(layout.buildDirectory.dir("central-staging-repo/name/jurgenei/xir-sax/${project.version}"))
+    into(layout.buildDirectory.dir("central-staging-repo/org/flowdigger/xir-sax/${project.version}"))
 
     doFirst {
         if (!artifactVersionDir.exists()) {
@@ -177,7 +177,7 @@ val generateCentralBundleChecksums by tasks.registering {
 
     doLast {
         val stagedVersionDir = layout.buildDirectory
-            .dir("central-staging-repo/name/jurgenei/xir-sax/${project.version}")
+            .dir("central-staging-repo/org/flowdigger/xir-sax/${project.version}")
             .get()
             .asFile
 

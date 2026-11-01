@@ -1,4 +1,4 @@
-package name.jurgenei.xir;
+package org.flowdigger.xir;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -47,7 +47,7 @@ public class XirFormatTest {
             """;
 
         StringWriter writer = new StringWriter();
-        XirSerializer serializer = new XirSerializer(writer, name.jurgenei.xir.XirSerializer.OutputFormat.COMPACT);
+        XirSerializer serializer = new XirSerializer(writer, org.flowdigger.xir.XirSerializer.OutputFormat.COMPACT);
         new XirParser().parse(new StringReader(input), serializer, serializer);
 
         String output = writer.toString();
@@ -100,7 +100,7 @@ public class XirFormatTest {
             """;
 
         StringWriter writer = new StringWriter();
-        XirSerializer serializer = new XirSerializer(writer, name.jurgenei.xir.XirSerializer.OutputFormat.COMPACT);
+        XirSerializer serializer = new XirSerializer(writer, org.flowdigger.xir.XirSerializer.OutputFormat.COMPACT);
         new XirParser().parse(new StringReader(input), serializer, serializer);
 
         String output = writer.toString();
@@ -139,8 +139,8 @@ public class XirFormatTest {
         StringWriter writer = new StringWriter();
         XirSerializer serializer = new XirSerializer(
             writer,
-            name.jurgenei.xir.XirSerializer.OutputFormat.COMPACT,
-            name.jurgenei.xir.XirSerializer.SyntaxMode.CANONICAL
+            org.flowdigger.xir.XirSerializer.OutputFormat.COMPACT,
+            org.flowdigger.xir.XirSerializer.SyntaxMode.CANONICAL
         );
         new XirParser().parse(new StringReader(input), serializer, serializer);
 
@@ -165,8 +165,8 @@ public class XirFormatTest {
         StringWriter writer = new StringWriter();
         XirSerializer serializer = new XirSerializer(
             writer,
-            name.jurgenei.xir.XirSerializer.OutputFormat.COMPACT,
-            name.jurgenei.xir.XirSerializer.SyntaxMode.CANONICAL
+            org.flowdigger.xir.XirSerializer.OutputFormat.COMPACT,
+            org.flowdigger.xir.XirSerializer.SyntaxMode.CANONICAL
         );
         new XirParser().parse(new StringReader(input), serializer, serializer);
 

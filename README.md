@@ -1,14 +1,14 @@
 # xir-sax
 
-[![Build](https://github.com/jurgenei/xir-sax/actions/workflows/ci.yml/badge.svg)](https://github.com/jurgenei/xir-sax/actions/workflows/ci.yml)
-[![Release](https://github.com/jurgenei/xir-sax/actions/workflows/release.yml/badge.svg)](https://github.com/jurgenei/xir-sax/actions/workflows/release.yml)
-[![Coverage CI](https://github.com/jurgenei/xir-sax/actions/workflows/coverage.yml/badge.svg)](https://github.com/jurgenei/xir-sax/actions/workflows/coverage.yml)
-[![CodeQL](https://github.com/jurgenei/xir-sax/actions/workflows/codeql.yml/badge.svg)](https://github.com/jurgenei/xir-sax/actions/workflows/codeql.yml)
-[![Dependency Check](https://github.com/jurgenei/xir-sax/actions/workflows/dependency-check.yml/badge.svg)](https://github.com/jurgenei/xir-sax/actions/workflows/dependency-check.yml)
-[![SpotBugs Security](https://github.com/jurgenei/xir-sax/actions/workflows/spotbugs-security.yml/badge.svg)](https://github.com/jurgenei/xir-sax/actions/workflows/spotbugs-security.yml)
-[![Dependabot](https://img.shields.io/badge/dependabot-enabled-025E8C?logo=dependabot)](https://github.com/jurgenei/xir-sax/security/dependabot)
-[![Coverage](https://codecov.io/gh/jurgenei/xir-sax/graph/badge.svg?branch=main)](https://codecov.io/gh/jurgenei/xir-sax?branch=main)
-[![Maven Central](https://img.shields.io/maven-central/v/name.jurgenei/xir-sax.svg)](https://search.maven.org/artifact/name.jurgenei/xir-sax)
+[![Build](https://github.com/flowdigger/xir-sax/actions/workflows/ci.yml/badge.svg)](https://github.com/flowdigger/xir-sax/actions/workflows/ci.yml)
+[![Release](https://github.com/flowdigger/xir-sax/actions/workflows/release.yml/badge.svg)](https://github.com/flowdigger/xir-sax/actions/workflows/release.yml)
+[![Coverage CI](https://github.com/flowdigger/xir-sax/actions/workflows/coverage.yml/badge.svg)](https://github.com/flowdigger/xir-sax/actions/workflows/coverage.yml)
+[![CodeQL](https://github.com/flowdigger/xir-sax/actions/workflows/codeql.yml/badge.svg)](https://github.com/flowdigger/xir-sax/actions/workflows/codeql.yml)
+[![Dependency Check](https://github.com/flowdigger/xir-sax/actions/workflows/dependency-check.yml/badge.svg)](https://github.com/flowdigger/xir-sax/actions/workflows/dependency-check.yml)
+[![SpotBugs Security](https://github.com/flowdigger/xir-sax/actions/workflows/spotbugs-security.yml/badge.svg)](https://github.com/flowdigger/xir-sax/actions/workflows/spotbugs-security.yml)
+[![Dependabot](https://img.shields.io/badge/dependabot-enabled-025E8C?logo=dependabot)](https://github.com/flowdigger/xir-sax/security/dependabot)
+[![Coverage](https://codecov.io/gh/flowdigger/xir-sax/graph/badge.svg?branch=main)](https://codecov.io/gh/flowdigger/xir-sax?branch=main)
+[![Maven Central](https://img.shields.io/maven-central/v/name.flowdigger/xir-sax.svg)](https://search.maven.org/artifact/name.flowdigger/xir-sax)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Java](https://img.shields.io/badge/java-21+-green.svg)](https://www.oracle.com/java/)
 [![Gradle](https://img.shields.io/badge/gradle-9.5+-blue.svg)](https://gradle.org/)
@@ -25,18 +25,18 @@ SAX parser, serializer, XMLReader for bracket-based XML/XDM S-expression format.
 Structured Knowledge -> XIR -> Observation -> Derivation -> Knowledge -> Applications
 ```
 
-Next repository in reading path: [xir-g4](https://github.com/jurgenei/xir-g4).
+Next repository in reading path: [xir-g4](https://github.com/flowdigger/xir-g4).
 
 ## Coordinates
 
 ```text
-name.jurgenei:xir-sax:<version>
+name.flowdigger:xir-sax:<version>
 ```
 
 ## Namespace
 
-- Java package: `name.jurgenei.xir`
-- Internal XDM bridge namespace URI: `urn:name.jurgenei.xml:xdm`
+- Java package: `name.flowdigger.xir`
+- Internal XDM bridge namespace URI: `urn:name.flowdigger.xml:xdm`
 - Internal XDM bridge prefix: `xdm`
 
 ## Included APIs

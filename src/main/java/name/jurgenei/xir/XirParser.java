@@ -1,4 +1,4 @@
-package name.jurgenei.xir;
+package org.flowdigger.xir;
 
 import org.xml.sax.ContentHandler;
 import org.xml.sax.SAXException;
@@ -19,7 +19,7 @@ import java.util.Set;
  * Parses bracket-based S-expression format into SAX events.
  */
 public final class XirParser {
-    static final String INTERNAL_XDM_URI = "urn:name.jurgenei.xml:xdm";
+    static final String INTERNAL_XDM_URI = "urn:org.flowdigger.xml:xdm";
     static final String INTERNAL_XDM_PREFIX = "xdm";
     private static final String XDM_MAP_HEAD = "xdm:map";
     private static final String XDM_ARRAY_HEAD = "xdm:array";
