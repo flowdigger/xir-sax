@@ -17,8 +17,8 @@ plugins {
     id("com.github.spotbugs") version "6.5.13"
 }
 
-group = "name.jurgenei"
-version = "0.1.4"
+group = "org.flowdigger"
+version = "1.0.0"
 
 repositories {
     mavenCentral()
