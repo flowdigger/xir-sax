@@ -18,7 +18,7 @@ plugins {
 }
 
 group = "org.flowdigger"
-version = "1.0.1"
+version = "1.0.2"
 
 repositories {
     mavenCentral()
