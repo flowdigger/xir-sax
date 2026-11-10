@@ -17,6 +17,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v7
 
+      - name: Clone flowdigger-gradle for composite build
+        run: |
+          if [ ! -d ../flowdigger-gradle/.git ]; then
+            git clone --depth 1 --branch main https://github.com/flowdigger/flowdigger-gradle.git ../flowdigger-gradle
+          fi
+
       - name: Set up JDK ${{ matrix.java-version }}
         uses: actions/setup-java@v6
         with:
@@ -29,4 +35,3 @@ jobs:
 
       - name: Run build and tests
         run: ./gradlew clean build --stacktrace --no-daemon
-
