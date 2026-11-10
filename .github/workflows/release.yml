@@ -13,5 +13,6 @@ jobs:
     with:
       java-version: "21"
       gradle-task: "publish"
+      central-namespace: "org.flowdigger"
       clone-flowdigger-gradle: true
       flowdigger-gradle-ref: "main"
