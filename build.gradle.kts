@@ -10,6 +10,7 @@ plugins {
     `maven-publish`
     id("org.flowdigger.maven-publish")
     id("org.owasp.dependencycheck") version "13.0.0"
+    id("org.flowdigger.dependency-check")
     id("com.github.spotbugs") version "6.5.13"
 }
 
@@ -112,21 +113,6 @@ tasks.register("coverage") {
 
 tasks.named("check") {
     dependsOn(tasks.named("jacocoTestCoverageVerification"))
-}
-
-extensions.getByName("dependencyCheck").withGroovyBuilder {
-    setProperty("formats", listOf("HTML", "JSON", "XML"))
-    setProperty("failBuildOnCVSS", 7.0f)
-    setProperty("suppressionFile", "dependency-check-suppressions.xml")
-    setProperty("skipConfigurations", listOf("spotbugs", "spotbugsPlugins"))
-
-    getProperty("nvd").withGroovyBuilder {
-        setProperty(
-            "apiKey",
-            providers.gradleProperty("org.owasp.dependencycheck.nvd.api.key").orNull
-                ?: System.getenv("NVD_API_KEY")
-        )
-    }
 }
 
 tasks.withType<com.github.spotbugs.snom.SpotBugsTask>().configureEach {

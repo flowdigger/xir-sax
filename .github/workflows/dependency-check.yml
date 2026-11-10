@@ -14,92 +14,10 @@ permissions:
 
 jobs:
   dependency-check:
-    runs-on: ubuntu-latest
-    env:
-      NVD_API_KEY: ${{ secrets.NVD_API_KEY }}
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v7
-
-      - name: Clone flowdigger-gradle for composite build
-        run: |
-          if [ ! -d ../flowdigger-gradle/.git ]; then
-            git clone --depth 1 --branch main https://github.com/flowdigger/flowdigger-gradle.git ../flowdigger-gradle
-          fi
-
-      - name: Setup Java 21
-        uses: actions/setup-java@v6
-        with:
-          distribution: temurin
-          java-version: "21"
-          cache: gradle
-
-      - name: Grant execute permission for Gradle wrapper
-        run: chmod +x ./gradlew
-
-      - name: Run OWASP Dependency-Check (retry on transient NVD update failures)
-        env:
-          NVD_API_KEY: ${{ secrets.NVD_API_KEY }}
-        shell: bash
-        run: |
-          set -euo pipefail
-
-          max_attempts=3
-          attempt=1
-          gradle_nvd_override=()
-
-          while [ "$attempt" -le "$max_attempts" ]; do
-            echo "Dependency-Check attempt $attempt/$max_attempts"
-
-            log_file="dependency-check-attempt-${attempt}.log"
-            if ./gradlew dependencyCheckAnalyze --no-daemon --no-configuration-cache --stacktrace "${gradle_nvd_override[@]}" 2>&1 | tee "$log_file"; then
-              echo "Dependency-Check completed on attempt $attempt"
-              exit 0
-            fi
-
-            # Invalid/revoked key causes hard-fail; clear key and retry unauthenticated.
-            if grep -q "Invalid API Key" "$log_file"; then
-              echo "Detected invalid NVD API key. Retrying without NVD_API_KEY."
-              unset NVD_API_KEY
-              gradle_nvd_override=(-Dorg.owasp.dependencycheck.nvd.api.key=)
-            fi
-
-            if [ "$attempt" -lt "$max_attempts" ]; then
-              sleep_seconds=$((attempt * 30))
-              echo "Dependency-Check failed. Sleeping ${sleep_seconds}s before retry."
-              sleep "$sleep_seconds"
-            fi
-
-            attempt=$((attempt + 1))
-          done
-
-          echo "Dependency-Check failed after $max_attempts attempts"
-          exit 1
-
-      - name: Upload Dependency-Check HTML report
-        if: always()
-        uses: actions/upload-artifact@v7
-        with:
-          name: dependency-check-html
-          path: build/reports/dependency-check-report.html
-
-      - name: Upload Dependency-Check XML report
-        if: always()
-        uses: actions/upload-artifact@v7
-        with:
-          name: dependency-check-xml
-          path: build/reports/dependency-check-report.xml
-
-      - name: Upload Dependency-Check JSON report
-        if: always()
-        uses: actions/upload-artifact@v7
-        with:
-          name: dependency-check-json
-          path: build/reports/dependency-check-report.json
-
-      - name: Dependency-Check summary
-        if: always()
-        run: |
-          echo "### OWASP Dependency-Check" >> "$GITHUB_STEP_SUMMARY"
-          echo "- Reports uploaded as workflow artifacts." >> "$GITHUB_STEP_SUMMARY"
+    uses: flowdigger/github-workflows/.github/workflows/dependency-check.yml@main
+    secrets: inherit
+    with:
+      trigger-event: ${{ github.event_name }}
+      upload-reports: true
+      clone-flowdigger-gradle: true
+      flowdigger-gradle-ref: "main"

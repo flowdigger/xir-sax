@@ -8,7 +8,7 @@ on:
 
 jobs:
   publish:
-    uses: flowdigger/github-workflows/.github/workflows/publish-maven-central.yml@v1
+    uses: flowdigger/github-workflows/.github/workflows/publish-maven-central.yml@main
     secrets: inherit
     with:
       java-version: "21"
