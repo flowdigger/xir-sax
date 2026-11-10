@@ -18,12 +18,24 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v7
 
+      - name: Clone flowdigger-gradle for composite build
+        run: |
+          if [ ! -d ../flowdigger-gradle/.git ]; then
+            git clone --depth 1 --branch main https://github.com/flowdigger/flowdigger-gradle.git ../flowdigger-gradle
+          fi
+
       - name: Setup Java 21
         uses: actions/setup-java@v6
         with:
           distribution: temurin
           java-version: "21"
           cache: gradle
+
+      - name: Clone flowdigger-gradle for composite build
+        run: |
+          if [ ! -d ../flowdigger-gradle/.git ]; then
+            git clone --depth 1 --branch main https://github.com/flowdigger/flowdigger-gradle.git ../flowdigger-gradle
+          fi
 
       - name: Grant execute permission for Gradle wrapper
         run: chmod +x ./gradlew
@@ -37,4 +49,3 @@ jobs:
         with:
           name: spotbugs-html
           path: build/reports/spotbugs/main.html
-
