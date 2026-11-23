@@ -109,7 +109,7 @@ Required Java version: **21+**
 - `codeql.yml` runs GitHub CodeQL static analysis
 - `dependency-check.yml` runs OWASP Dependency-Check and uploads reports
 - `spotbugs-security.yml` runs SpotBugs + FindSecBugs and uploads report
-- `release.yml` publishes signed artifacts using Sonatype Central Publisher API
+- `release.yml` calls shared reusable workflow for Maven Central publication
 - `dependabot.yml` enables weekly updates for Gradle and GitHub Actions
 
 ## License
